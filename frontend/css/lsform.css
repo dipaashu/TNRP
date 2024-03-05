@@ -1,0 +1,62 @@
+#login {
+    font-family: "Anta", sans-serif;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: auto;
+    padding-top: 10%;
+}
+
+#login h1 {
+    color: #fffffe;
+}
+
+#login .input {
+    position: relative;
+    width: 50%;
+}
+
+#login .input input {
+    font-family: Monaco;
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 40px;
+    font-size: 1.2em;
+    color: #fff;
+    box-shadow: none;
+    outline: none;
+}
+
+#login .input input[type="submit"] {
+    width: 50%;
+    background: transparent;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+
+#login .input input[type="submit"]:hover {
+    background-color: #eebbc3;
+    color: #232946;
+    border: #eebbc3;
+}
+
+
+#login .links {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+#login .links a {
+    height: 30px;
+    width: 200px;
+    text-decoration: none;
+    color: #b8c1ec;
+  }
