@@ -1,15 +1,32 @@
-
-
+#info {
+    padding-top: 60px;
+}
 #info h1 {
     font-family: "Anta", sans-serif;
     font-weight: 600;
     font-style: normal;
     color: #fffffe;
     text-align: center;
+    font-size: 60px;
 }
 
-p {
+#info p {
     color: #b8c1ec;
     font-family: Monaco;
     text-align: center;
+}
+
+#info p a {
+    text-decoration: none;
+    font-size: large;
+    color: #232946;
+    border: solid #eebbc3;
+    border-radius: 6px;
+    background-color: #eebbc3;
+}
+
+#info p a:hover {
+    color: #eebbc3;
+    background-color: black;
+    border: #232946;
 }
