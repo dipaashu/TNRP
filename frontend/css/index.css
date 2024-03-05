@@ -1,5 +1,12 @@
+div{
+    display: flex;
+}
 #info {
     padding-top: 60px;
+    background-color: #232946;
+    padding-bottom: 30px;
+    flex-direction: column;
+    padding-bottom: 70px;
 }
 #info h1 {
     font-family: "Anta", sans-serif;
@@ -29,4 +36,9 @@
     color: #eebbc3;
     background-color: black;
     border: #232946;
+}
+
+.features {
+    background-color: #d4d8f0;
+    margin-top: 0;
 }
