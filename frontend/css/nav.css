@@ -1,0 +1,26 @@
+#nav{
+    background-color: #000;
+    justify-content: space-between;
+    height: 40px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+
+}
+
+.menu{
+    display: flex;
+    /* float: left; */
+}
+
+.menu:hover{
+    background-color: antiquewhite;
+}
+
+#logo{
+    height: 30px;
+    width: 30px;
+    float: left;
+    padding-top: 5px;
+    padding-left: 10px;
+}
