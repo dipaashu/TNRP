@@ -17,9 +17,9 @@
         <!-- navbar -->
         <nav class="navbar">
             <ul>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="index.html">Home</a></li>
-                <a href="/frontend/index.html"><img id="logo" src="/frontend/img/logo.png" alt="Logo"></a>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="index.php">Home</a></li>
+                <a href="/frontend/index.php"><img id="logo" src="/frontend/img/logo.png" alt="Logo"></a>
             </ul>
         </nav>
         <!-- login form  -->
@@ -30,7 +30,7 @@
             <div class="input"><input type="submit" value="Sign in"></div>
             <div class="links">
                 <a href="#">Forget Password</a>
-                <a href="/frontend/signup.html">New to NoteGit</a>
+                <a href="/frontend/signup.php">New to NoteGit</a>
             </div>
 
         </div>

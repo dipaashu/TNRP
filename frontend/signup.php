@@ -17,9 +17,9 @@
         <!-- navbar  -->
         <nav class="navbar">
             <ul>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="index.html">Home</a></li>
-                <a href="/frontend/index.html"><img id="logo" src="/frontend/img/logo.png" alt="Logo"></a>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="index.php">Home</a></li>
+                <a href="/frontend/index.php"><img id="logo" src="/frontend/img/logo.png" alt="Logo"></a>
             </ul>
         </nav>
         <!-- sign up form  -->
@@ -32,8 +32,8 @@
             <div class="input"><input type="password" placeholder="Confirm password"></div>
             <div class="input"><input type="submit" value="Create account"></div>
             <div class="links">
-                <a href="/frontend/index.html">Go to home page</a>
-                <a href="/frontend/login.html">Already have an account</a>
+                <a href="/frontend/index.php">Go to home page</a>
+                <a href="/frontend/login.php">Already have an account</a>
             </div>
         </div>
     </body>

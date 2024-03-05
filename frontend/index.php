@@ -17,9 +17,9 @@
         <!-- Navbar -->
         <nav class="navbar">
             <ul>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="index.html">Home</a></li>
-                <a href="/frontend/index.html"><img id="logo" src="/frontend/img/logo.png" alt="Logo"></a>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="index.php">Home</a></li>
+                <a href="/frontend/index.php"><img id="logo" src="/frontend/img/logo.png" alt="Logo"></a>
             </ul>
         </nav>
         <!-- headline -->
@@ -30,7 +30,7 @@
             <p>Now create, save and access your notes anytime , anywhere fron the globe.</p>
             <p>Not just that, you can do collaborations, with your friends ,  colleagues, students and so on...</p>
             <br>
-            <p>Join us today <a href="/frontend/signup.html">Sign up</a> or <a href="/frontend/login.html">Login</a>.</p>
+            <p>Join us today <a href="/frontend/signup.php">Sign up</a> or <a href="/frontend/login.php">Login</a>.</p>
         </div>
         <div class="features">
             <h2>Features</h2>
