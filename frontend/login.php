@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if(isset($_SESSION['user'])){
+        header("Location: index.php");
+    }
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,9 +33,32 @@
         <!-- login form  -->
         <div class="login">
             <h1>Login</h1>
-            <div class="input"><input type="text" placeholder="Username"></div>
-            <div class="input"><input type="password" placeholder="Password"></div>
-            <div class="input"><input type="submit" value="Sign in"></div>
+            <?php
+            if(isset($_POST["login"])){
+                $uname = $_POST["uname"];
+                $password = $_POST["password"];
+                require_once './db.php';
+                $sql = "SELECT * FROM signup WHERE uname = '$uname'";
+                $result = mysqli_query($conn, $sql);
+                $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                if ($user) {
+                    if (password_verify($password, $user['password'])) {
+                        session_start();
+                        $_SESSION['user'] = $user;
+                        header("Location: home.php");
+                        die();
+                    }
+                        else echo "<div class='error' style='color:red;> Password is incorrect</div>";
+                    }
+                else echo "<div class='error' style='color:red;> Username is incorrect</div>";
+                }
+            
+            ?>
+            <form action="login.php" method="post">
+                <div class="input"><input type="text" name="uname" placeholder="Username"></div>
+                <div class="input"><input type="password" name="password" placeholder="Password"></div>
+                <div class="input"><input type="submit" value="login"></div>
+            </form>
             <div class="links">
                 <a href="#">Forget Password</a>
                 <a href="./signup.php">New to NoteGit</a>
