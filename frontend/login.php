@@ -1,9 +1,8 @@
 <?php
-    session_start();
-    if(isset($_SESSION['user'])){
-        header("Location: index.php");
-    }
-
+// session_start();
+// if (!isset($_SESSION["user"])) {
+//     header("Location: index.php");
+// }
 ?>
 
 <!DOCTYPE html>
@@ -32,38 +31,43 @@
         </nav>
         <!-- login form  -->
         <div class="login">
-            <h1>Login</h1>
             <?php
-            if(isset($_POST["login"])){
-                $uname = $_POST["uname"];
-                $password = $_POST["password"];
-                require_once './db.php';
-                $sql = "SELECT * FROM signup WHERE uname = '$uname'";
-                $result = mysqli_query($conn, $sql);
-                $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
-                if ($user) {
-                    if (password_verify($password, $user['password'])) {
-                        session_start();
-                        $_SESSION['user'] = $user;
-                        header("Location: home.php");
-                        die();
-                    }
-                        else echo "<div class='error' style='color:red;> Password is incorrect</div>";
-                    }
-                else echo "<div class='error' style='color:red;> Username is incorrect</div>";
+        if (isset($_POST["login"])) {
+            $email = trim($_POST["email"]);
+            $password = trim($_POST["password"]);
+            //    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+            require_once "database.php";
+            $sql = "SELECT * FROM users WHERE email = ?";
+            $stmt = mysqli_prepare($conn, $sql);
+            mysqli_stmt_bind_param($stmt, "s", $email);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+            $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
+            if ($user) {
+                if (password_verify($password, $user["password"])) {
+                    session_start();
+                    $_SESSION["user"] = $user["id"];
+                    header("Location: home.php");
+                    die();
+                }else{
+                    echo "<div style='color:red;'>Password does not match</div>";
                 }
-            
-            ?>
-            <form action="login.php" method="post">
-                <div class="input"><input type="text" name="uname" placeholder="Username"></div>
-                <div class="input"><input type="password" name="password" placeholder="Password"></div>
-                <div class="input"><input type="submit" value="login"></div>
-            </form>
+            }else{
+                echo "<div style='color:red;'>Email does not match</div>";
+            }
+        }
+        ?>
+    <form action="login.php" class="login" method="post">
+            <h1>Login</h1>
+            <div class="input"><input type="email" name="email" placeholder="Email"></div>
+            <div class="input"><input type="password" name="password" placeholder="Password"></div>
+            <div class="input"><input type="submit" name="login" value="login"></div>
             <div class="links">
                 <a href="#">Forget Password</a>
                 <a href="./signup.php">New to NoteGit</a>
             </div>
-
+            
         </div>
+    </form>
     </body>
 </html>
