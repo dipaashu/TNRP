@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 include 'noteOperation.php';
 session_start();
 if (!isset($_SESSION["user"])) {
@@ -44,16 +43,7 @@ if (isset($_GET['delete'])) {
 $notes = $noteOps->readNotes($userId);
 ?>
 
-=======
-session_start();
-if (isset($_SESSION["user"])) {
-    header("Location: home.php");
-}
-else {
-    header("Location: login.php");
-}
-?>
->>>>>>> 8024406df4231eaa76056a739a2e637f0f038936
+
 <!DOCTYPE html>
 <html>
 <head>

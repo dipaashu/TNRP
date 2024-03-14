@@ -1,15 +1,12 @@
 <?php
-<<<<<<< HEAD
 // session_start();
 // if (!isset($_SESSION["user"])) {
 //     header("Location: index.php");
 // }
-=======
 session_start();
 if (isset($_SESSION["user"])) {
     header("Location: home.php");
 }
->>>>>>> 8024406df4231eaa76056a739a2e637f0f038936
 ?>
 
 <!DOCTYPE html>
@@ -53,11 +50,7 @@ if (isset($_SESSION["user"])) {
             if ($user) {
                 if (password_verify($password, $user["password"])) {
                     session_start();
-<<<<<<< HEAD
                     $_SESSION["user"] = $user["id"];
-=======
-                    $_SESSION["user"] = "yes";
->>>>>>> 8024406df4231eaa76056a739a2e637f0f038936
                     header("Location: home.php");
                     die();
                 }else{
