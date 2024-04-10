@@ -48,6 +48,8 @@ $notes = $noteOps->readNotes($userId);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.datatables.net/2.0.3/css/dataTables.dataTables.min.css">
+
 </head>
 <body>
     <nav class="navbar">
@@ -65,18 +67,32 @@ $notes = $noteOps->readNotes($userId);
             <div class="create"><input id="create-submit" type="submit" name="create" value="Create"></div>
         </form>
     </div>
-    <?php foreach ($notes as $note): ?>
-        <div>
-            <h3><?= htmlspecialchars($note['title']) ?></h3>
-            <p><?= htmlspecialchars($note['notes']) ?></p>
-            <form method="post">
-                <input type="hidden" name="noteid" value="<?= $note['noteid'] ?>">
-                <input type="text" name="title" value="<?= htmlspecialchars($note['title']) ?>" required>
-                <textarea name="notes" required><?= htmlspecialchars($note['notes']) ?></textarea>
-                <button type="submit" name="update">Update</button>
-            </form>
-            <a href="?delete=<?= $note['noteid'] ?>">Delete</a>
+    <div>
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th scope="col">Sl. No</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Content</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($notes as $note): ?>
+                    <tr>
+                        <th scope='row'><?= htmlspecialchars($note['noteid']) ?></th>
+                        <td><?= htmlspecialchars($note['title']) ?></td>
+                        <td><?= htmlspecialchars($note['notes']) ?></td>
+                        <td>Actions</td>
+                    </tr>";
+                <?php endforeach; ?>
+                </tbody>
+            </table>
         </div>
-    <?php endforeach; ?>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="//cdn.datatables.net/2.0.3/js/dataTables.min.js"></script>
+    <script>
+        let table = new DataTable('#myTable');
+    </script>
 </body>
 </html>
