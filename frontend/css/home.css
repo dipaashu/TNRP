@@ -2,3 +2,51 @@ body{
     background-color: #232946;
 }
 
+.create-note {
+    font-family: "Anta", sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: auto;
+    padding-top: 5%;
+    align-items: center;
+}
+
+.create-note h2 {
+    color: aliceblue;
+}
+
+.create-note .create {
+    width: 120%;
+    padding-top: 10px;
+}
+.create-note .create input {
+    font-family: Monaco;
+    height: 30px;
+    border: 2px solid #fff;
+    background: transparent;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    box-shadow: none;
+    outline: none; 
+}
+
+#create-submit:hover {
+    color: #232946;
+    background-color: #eebbc3;
+}
+.create-note .create textarea {
+    font-family: Monaco;
+    height: 200px;
+    width: 100%;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    font-size: 1.2em;
+    color: #fff;
+    box-shadow: none;
+    outline: none; 
+}

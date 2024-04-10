@@ -4,16 +4,6 @@ session_start();
 if (!isset($_SESSION["user"])) {
     header("Location: login.php");
 }
-// else {
-//     header("Location: login.php");
-// }
-
-
-// Check if user is logged in
-// if (!isset($_SESSION['user'])) {
-//     header('Location: login.php');
-//     exit();
-// }
 
 $userId = $_SESSION['user'];
 $noteOps = new NoteOperations($conn);
@@ -70,9 +60,9 @@ $notes = $noteOps->readNotes($userId);
     <div class="create-note">
         <h2>My Notes</h2>
         <form class="add" method="post">
-            <input type="text" name="title" placeholder="Title" required>
-            <textarea name="notes" placeholder="Write your note here..." required></textarea>
-            <button type="submit" name="create">Create Note</button>
+            <div class="create"><input type="text" name="title" placeholder="Title" required></div>
+            <div class="create"><textarea name="notes" placeholder="Write your note here..." required></textarea></div>
+            <div class="create"><input id="create-submit" type="submit" name="create" value="Create"></div>
         </form>
     </div>
     <?php foreach ($notes as $note): ?>
