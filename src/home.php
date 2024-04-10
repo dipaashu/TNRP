@@ -31,6 +31,7 @@ if (isset($_GET['delete'])) {
 }
 
 $notes = $noteOps->readNotes($userId);
+$sno = 0;
 ?>
 
 
@@ -52,6 +53,21 @@ $notes = $noteOps->readNotes($userId);
 
 </head>
 <body>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Update Note</h2>
+            <form method="post">
+                <input id="noteidedit" type="hidden" name="noteid" value="<?= $note['noteid'] ?>">
+                <input id="titleedit" type="text" name="title" value="<?= htmlspecialchars($note['title']) ?>" required>
+                <textarea id="notesedit" name="notes" required><?= htmlspecialchars($note['notes']) ?></textarea>
+                <button type="submit" name="update">Update</button>
+            </form>
+        </div>
+
+    </div>
     <nav class="navbar">
         <ul>
             <li><a href="logout.php">Logout</a></li>
@@ -81,11 +97,11 @@ $notes = $noteOps->readNotes($userId);
             <tbody>
                 <?php foreach ($notes as $note): ?>
                     <tr>
-                        <th><?= htmlspecialchars($note['noteid']) ?></th>
+                        <th><?= $sno = $sno + 1 ?></th>
                         <td><?= htmlspecialchars($note['title']) ?></td>
                         <td><?= htmlspecialchars($note['notes']) ?></td>
-                        <td><a class='edit' href="">Edit</a> <a href="?delete=<?= $note['noteid'] ?>">Delete</a></td>
-                    </tr>";
+                        <td><button class="edit" id="<?= htmlspecialchars($note['noteid']) ?>">Edit</button> <a href="?delete=<?= $note['noteid'] ?>">Delete</a></td>
+                    </tr>
                 <?php endforeach; ?>
                 </tbody>
             </table>
@@ -95,6 +111,24 @@ $notes = $noteOps->readNotes($userId);
     <script>
         let table = new DataTable('#myTable');
     </script>
-
+    <script>
+        edits = document.getElementsByClassName('edit'); 
+        Array.from(edits).forEach((el)=>{
+            el.addEventListener("click", (e)=>{
+                    tr = e.target.parentNode.parentNode;
+                    title = tr.getElementsByTagName("td")[0].innerText;
+                    notes = tr.getElementsByTagName("td")[1].innerText;
+                    titleedit.value = title;
+                    notesedit.value = notes;
+                    noteidedit.value = e.target.id;
+                    $(".modal").css("display", "block");
+                })
+            })
+        const modal = document.getElementById('myModal');
+        span = document.getElementsByClassName("close")[0];
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    </script>
 </body>
 </html>
