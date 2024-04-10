@@ -60,20 +60,21 @@ $notes = $noteOps->readNotes($userId);
     <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
 </head>
 <body>
-        <nav class="navbar">
-            <ul>
-                <li><a href="logout.php">Logout</a></li>
-                <li><a href="index.php">Home</a></li>
-                <a href="./index.php"><img id="logo" src="./img/logo.png" alt="Logo"></a>
-            </ul>
-        </nav>
-    <h2>My Notes</h2>
-    <form method="post">
-        <input type="text" name="title" placeholder="Title" required>
-        <textarea name="notes" placeholder="Write your note here..." required></textarea>
-        <button type="submit" name="create">Create Note</button>
-    </form>
-
+    <nav class="navbar">
+        <ul>
+            <li><a href="logout.php">Logout</a></li>
+            <li><a href="index.php">Home</a></li>
+            <a href="./index.php"><img id="logo" src="./img/logo.png" alt="Logo"></a>
+        </ul>
+    </nav>
+    <div class="create-note">
+        <h2>My Notes</h2>
+        <form class="add" method="post">
+            <input type="text" name="title" placeholder="Title" required>
+            <textarea name="notes" placeholder="Write your note here..." required></textarea>
+            <button type="submit" name="create">Create Note</button>
+        </form>
+    </div>
     <?php foreach ($notes as $note): ?>
         <div>
             <h3><?= htmlspecialchars($note['title']) ?></h3>

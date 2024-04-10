@@ -9,7 +9,7 @@ ul {
     font-family: Monaco;
     box-sizing: border-box;
     background-color: #232946;
-    position: fixed;
+    position: relative;
 }
 
 li {
