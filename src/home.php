@@ -67,23 +67,24 @@ $notes = $noteOps->readNotes($userId);
             <div class="create"><input id="create-submit" type="submit" name="create" value="Create"></div>
         </form>
     </div>
-    <div>
-        <table id="myTable">
+    <br><br>
+    <div class="mytable">
+        <table id="myTable" >
             <thead>
                 <tr>
-                    <th scope="col">Sl. No</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Content</th>
-                    <th scope="col">Actions</th>
+                    <th>Sl. No</th>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($notes as $note): ?>
                     <tr>
-                        <th scope='row'><?= htmlspecialchars($note['noteid']) ?></th>
+                        <th><?= htmlspecialchars($note['noteid']) ?></th>
                         <td><?= htmlspecialchars($note['title']) ?></td>
                         <td><?= htmlspecialchars($note['notes']) ?></td>
-                        <td>Actions</td>
+                        <td><a class='edit' href="">Edit</a> <a href="?delete=<?= $note['noteid'] ?>">Delete</a></td>
                     </tr>";
                 <?php endforeach; ?>
                 </tbody>
@@ -94,5 +95,6 @@ $notes = $noteOps->readNotes($userId);
     <script>
         let table = new DataTable('#myTable');
     </script>
+
 </body>
 </html>

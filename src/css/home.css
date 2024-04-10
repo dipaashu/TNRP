@@ -40,7 +40,7 @@ body{
 }
 .create-note .create textarea {
     font-family: Monaco;
-    height: 200px;
+    height: 150px;
     width: 100%;
     background: transparent;
     border: 2px solid #fff;
@@ -49,4 +49,36 @@ body{
     color: #fff;
     box-shadow: none;
     outline: none; 
+}
+.mytable {
+    font-family: 'Monaco';
+    border: 1px transparent;
+    border-radius: 8px;
+    background-color: #d4d8f0;
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    margin: auto;
+}
+
+table {
+    border: 2px solid;
+    text-align: left;
+    border-collapse: collapse;
+    padding-top: 20px;
+    width: 100%;
+}
+
+#myTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    text-align: left;
+    border: 1px solid;
+    color: #121629;
+}
+
+tbody, thead {
+    margin: auto;
 }
