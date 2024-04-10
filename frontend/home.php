@@ -54,6 +54,7 @@ $notes = $noteOps->readNotes($userId);
     <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.png" />
     <link rel="stylesheet" href="./css/nav.css">
     <link rel="stylesheet" href="./css/default.css">
+    <link rel="stylesheet" href="./css/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
