@@ -39,6 +39,10 @@ if (isset($_SESSION["user"])) {
             <p>Join us today <a href="./signup.php">Sign up</a> or <a href="./login.php">Login</a>.</p>
         </div>
         <div class="features">
+            <img src="./img/signup.png" alt="signup">
+            <h1>One click signup</h1>
+        </div>
+        <div class="features">
             <div>
                 <h1>Simple and intuitive <br>interface to create <br>your notes.</h1>
                 <img src="./img/create.png" alt="create note">
@@ -52,9 +56,9 @@ if (isset($_SESSION["user"])) {
             <h1>Organize notes with <br>simple and interactive table</h1>
             <img src="./img/table.png" alt="table">
         </div>
-        <div class="features">
-            <img src="./img/signup.png" alt="signup">
-            <h1>One click signup</h1>
-        </div>
+        <footer>
+            <h2>Made by <a href="https://github.com/dipaashu">Dipak</a></h2>
+            <h3><a href="https://github.com/dipaashu/TNRP"> Git repo</a></h3>
+        </footer>
     </body>
 </html>

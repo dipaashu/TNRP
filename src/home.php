@@ -106,29 +106,30 @@ $sno = 0;
                 </tbody>
             </table>
         </div>
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="//cdn.datatables.net/2.0.3/js/dataTables.min.js"></script>
-    <script>
-        let table = new DataTable('#myTable');
-    </script>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script src="//cdn.datatables.net/2.0.3/js/dataTables.min.js"></script>
+        <script>
+            let table = new DataTable('#myTable');
+            </script>
     <script>
         edits = document.getElementsByClassName('edit'); 
         Array.from(edits).forEach((el)=>{
             el.addEventListener("click", (e)=>{
-                    tr = e.target.parentNode.parentNode;
-                    title = tr.getElementsByTagName("td")[0].innerText;
-                    notes = tr.getElementsByTagName("td")[1].innerText;
-                    titleedit.value = title;
-                    notesedit.value = notes;
-                    noteidedit.value = e.target.id;
-                    $(".modal").css("display", "block");
-                })
+                tr = e.target.parentNode.parentNode;
+                title = tr.getElementsByTagName("td")[0].innerText;
+                notes = tr.getElementsByTagName("td")[1].innerText;
+                titleedit.value = title;
+                notesedit.value = notes;
+                noteidedit.value = e.target.id;
+                $(".modal").css("display", "block");
             })
+        })
         const modal = document.getElementById('myModal');
         span = document.getElementsByClassName("close")[0];
         span.onclick = function() {
             modal.style.display = "none";
         }
-    </script>
+        </script>
+
 </body>
 </html>
