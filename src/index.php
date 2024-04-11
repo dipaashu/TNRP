@@ -32,14 +32,29 @@ if (isset($_SESSION["user"])) {
         <div id="info">
             <h1>NoteGit</h1>
             <br>
-            <p id="qoute">From Inspiration to Implementation: Your Notes, Your Journey.</p>
+            <p id="qoute">" From Inspiration to Implementation: Your Notes, Your Journey. "</p>
             <p>A simple web based repository system for your notes. 
             <p>Now create, save and access your notes anytime , anywhere fron the globe.</p>
             <br>
             <p>Join us today <a href="./signup.php">Sign up</a> or <a href="./login.php">Login</a>.</p>
         </div>
         <div class="features">
-            <h2>Features</h2>
+            <div>
+                <h1>Simple and intuitive <br>interface to create <br>your notes.</h1>
+                <img src="./img/create.png" alt="create note">
+            </div>
+        </div>
+        <div class="features">
+            <img src="./img/edit.png" alt="edit">
+            <h1>Edit your notes <br>whenever you want.</h1>
+        </div>
+        <div class="features">
+            <h1>Organize notes with <br>simple and interactive table</h1>
+            <img src="./img/table.png" alt="table">
+        </div>
+        <div class="features">
+            <img src="./img/signup.png" alt="signup">
+            <h1>One click signup</h1>
         </div>
     </body>
 </html>
