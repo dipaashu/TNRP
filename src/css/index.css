@@ -39,7 +39,14 @@ div{
     border: #232946;
 }
 
+
+
 .features {
+    font-family: "Anta", sans-serif;
     background-color: #d4d8f0;
     margin-top: 0;
+}
+
+.features h2 {
+    padding-left: 10px;
 }

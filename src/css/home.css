@@ -77,8 +77,30 @@ th, td {
     color: #121629;
 }
 
+
+
 tbody, thead {
     margin: auto;
+}
+
+#delete button {
+  width: 63px;
+  padding: 5%;
+  text-decoration: none;
+  border : 1px transparent;
+  border-radius: 3px;
+  background-color: #ED0800;
+  color: #ffffff;
+}
+
+.edit {
+  padding: 5%;
+  text-decoration: none;
+  border : 1px transparent;
+  width: 63px;
+  border-radius: 3px;
+  background-color: #5b5ef8;
+  color: #ffffff;
 }
 
 

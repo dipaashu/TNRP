@@ -100,7 +100,7 @@ $sno = 0;
                         <th><?= $sno = $sno + 1 ?></th>
                         <td><?= htmlspecialchars($note['title']) ?></td>
                         <td><?= htmlspecialchars($note['notes']) ?></td>
-                        <td><button class="edit" id="<?= htmlspecialchars($note['noteid']) ?>">Edit</button> <a href="?delete=<?= $note['noteid'] ?>">Delete</a></td>
+                        <td><button class="edit" id="<?= htmlspecialchars($note['noteid']) ?>">Edit</button> <a id="delete" href="?delete=<?= $note['noteid'] ?>"><button>Delete</button></a></td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
